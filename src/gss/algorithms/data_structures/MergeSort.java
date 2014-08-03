@@ -7,7 +7,8 @@ public class MergeSort {
 		if(A==null)
 			return;
 		if(p<r){			
-			int q=((p+r)/2);
+			//int q=((p+r)/2);
+			int q=p+(r-p)/2;
 			//System.out.println(p+" "+q+" "+r);
 			mergesort(A,p,q);
 			mergesort(A,q+1,r);
@@ -53,7 +54,8 @@ public class MergeSort {
 		if(A==null)
 			return;
 		if(p<r){			
-			int q=((p+r)/2);
+			//int q=((p+r)/2);
+			int q=p+(r-p)/2;
 			//System.out.println(p+" "+q+" "+r);
 			mergesort(A,p,q);
 			mergesort(A,q+1,r);
