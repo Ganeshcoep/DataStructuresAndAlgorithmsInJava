@@ -26,7 +26,7 @@ public class UsefulToKnow {
 		UsefulToKnow p= new UsefulToKnow();		
 		String test="testString";
 		char[] myArray=test.toCharArray();
-		System.out.println(myArray[5]);
+		System.out.println("After converting "+test+" to charArray 5th char is :"+myArray[5]);
 		int [] a={11,4,5,2};
 		Arrays.sort(a);
 		System.out.println(a[0]);		

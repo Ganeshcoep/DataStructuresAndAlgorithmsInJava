@@ -7,57 +7,25 @@ public class Sorting {
 	 */
 	
 	private int A[];
+	private int posArr[];
 	int size;
 	Sorting(int inputSize){
 		this.size=inputSize;
 		A=new int[]{4,3,2,1};
-		
+		posArr=new int[A.length];
+		for(int i=0;i<posArr.length;i++)
+			posArr[i]=-1;		
 	}
 	
-	public void mergesort(int A[],int p, int r)
-	{
-		if(p<r){
-			
+	public void mergesort(int A[],int p, int r){
+		if(p<r){			
 			int q=((p+r)/2);
 			//System.out.println(p+" "+q+" "+r);
 			mergesort(A,p,q);
 			mergesort(A,q+1,r);
-			merge(A,p,q,r);		// 0 1 3 
-			
-		}		
-		
+			merge(A,p,q,r);		// 0 1 3			
+		}				
 	}
-	
-	
-	public void bubblesort(){
-		
-		for(int i=0;i<A.length;i++){
-			
-			for(int j=i+1;j<A.length;j++){
-				
-				if(A[i]>A[j]){
-					swap(A,i,j);//A[i],A[j]);
-				/*	int temp=A[i];
-					A[i]=A[j];
-					A[j]=temp;
-					*/
-					
-				}
-			}
-			
-			
-	}
-	}
-	
-	
-	private void swap(int A[],int a, int b){
-		
-		int temp=A[a];
-		A[a]=A[b];
-		A[b]=temp;
-	}
-			
-	
 	
 	private void merge(int A[],int p,int q, int r){
 		//0 1 2 
@@ -85,10 +53,15 @@ public class Sorting {
 			
 		//put sentinel elements
 		L[n1]=100000;
-		R[n2]=100000;
-		
+		R[n2]=100000;		
 		
 		// now compare and merge the L and R and store the result in array A
+		int tempPosArr[]=new int[posArr.length];
+		/*for(int m=0;m<tempPosArr.length;m++){
+			tempPosArr[m]=posArr[m];
+		}
+		*/		
+		System.arraycopy(posArr, 0, tempPosArr, 0, posArr.length);
 		
 		int i=0,j=0;
 		for(int k=p;k<=r;k++)
@@ -97,24 +70,63 @@ public class Sorting {
 			if(L[i]<=R[j]){
 				A[k]=L[i];
 			//	System.out.println("Copied element in A "+ A[k]+ "from "+ L[i]);
+				if(posArr[k]==-1)
+					posArr[k]=p+i;
+				else{
+					posArr[k]=tempPosArr[p+i];
+				}
 				i++;
+				
 			}
 			else{
 				A[k]=R[j];
-				j++;
+				if(posArr[k]==-1)
+					posArr[k]=q+1+j;
+				else{
+					posArr[k]=tempPosArr[q+1+j];
+				}
+
+				j++;			
 				
-			}		
+			}			
+		}		
+		display();
+	}
+	
+	
+	public void bubblesort(){
+		
+		for(int i=0;i<A.length;i++){
 			
-		}
-		
-		
-		
+			for(int j=i+1;j<A.length;j++){				
+				if(A[i]>A[j]){
+					swap(A,i,j);//A[i],A[j]);
+				/*	int temp=A[i];
+					A[i]=A[j];
+					A[j]=temp;
+					*/
+					
+				}
+			}
+			
+			
+	}
+	}
+	
+	
+	private void swap(int A[],int a, int b){		
+		int temp=A[a];
+		A[a]=A[b];
+		A[b]=temp;
 	}
 	
 	public void display(){
 		System.out.println("--------------------------------- ");
 		for(int i=0;i<=size;i++)
 			System.out.print(A[i]+" ");
+		System.out.println("--------------------------------- ");
+		for(int i=0;i<=size;i++)
+			System.out.print(posArr[i]+" ");
 		
 	}
 	
@@ -163,9 +175,9 @@ public class Sorting {
 		int size=3;
 		Sorting s=new Sorting(size);
 		s.display();
-		//s.mergesort(s.A,0,size);
+		s.mergesort(s.A,0,size);
 		//s.quicksort(s.A, 0, 3);
-		s.bubblesort();
+		//s.bubblesort();
 		s.display();
 		
 	}
