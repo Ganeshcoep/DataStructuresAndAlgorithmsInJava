@@ -68,7 +68,7 @@ public class MergeSortWithOriginalPositionsOfElements {
 				j++;				
 			}			
 		}		
-		//display(A,posArr);
+		display(A,posArr);
 	}
 	
 	public void display(int A[],int posArr[]){
@@ -83,7 +83,8 @@ public class MergeSortWithOriginalPositionsOfElements {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		MergeSortWithOriginalPositionsOfElements m= new MergeSortWithOriginalPositionsOfElements();
-		int A[]={9,5,0,3};
+		//int A[]={9,5,0,3};
+		int A[]={10,2,5,1,8,20};
 		int posArr[]=new int[A.length];
 		//initialise the posArr
 		for(int i=0;i<posArr.length;i++)

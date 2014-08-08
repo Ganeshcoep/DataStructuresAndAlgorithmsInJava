@@ -47,19 +47,31 @@ public class PassingCars {
 		int noOfOnes=0;
 		int prevNoOfOnes=0;
 		int totalCrossings=0;
+		boolean overFlowFlag=false;
+		
 		for(int i=A.length-1;i>=0;i--){
 			if(A[i]==1){
 				noOfOnes++;
 			}else{
+				
+				try
+				{
 				totalCrossings=prevNoOfOnes+noOfOnes;
-				if(totalCrossings>Integer.MAX_VALUE){
-					return -1;			
+				}catch(ArithmeticException e)
+				{
+					overFlowFlag=true;
 				}
+				
+				if(overFlowFlag)
+					break;
+				/*if(totalCrossings>Integer.MAX_VALUE){
+					return -1;			
+				}*/
 				prevNoOfOnes=totalCrossings;
 				
 			}			
 		}			
-		if(totalCrossings>1000000000)
+		if((totalCrossings>1000000000)||overFlowFlag)
 			return -1;
 		else			
 			return totalCrossings;
