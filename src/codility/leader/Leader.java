@@ -42,7 +42,6 @@ public class Leader {
 		int A[]={1,2,1,2,5,3,2,2};
 		System.out.println(getCandidate(A)); // gives possible majority candidate
 		System.out.println(checkMajority(getCandidate(A),A));//returns true if majority element is present
-
 	}
 
 }

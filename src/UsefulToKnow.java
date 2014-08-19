@@ -42,6 +42,11 @@ public class UsefulToKnow {
 		System.out.println(Arrays.binarySearch(a,11));		
 		// Can int(primitive data type) array be null in Java 
 		int[] A=null; // yes	
+		//printing chars in java
+		for (char i ='a'; i <'z'; i++) {
+			System.out.println(i);
+		}
+
 		
 	}
 }
