@@ -13,7 +13,7 @@ import java.util.Map.Entry;
 
 public class AllPossibleSubstringsOfString {
 	public static void main(String args[]){
-		String input="kin";
+		String input="kincenvizh";
 		//Initialize hashmap here since there might be duplicate substrings starting at any index of String
 		HashMap<String,String> hmap=new HashMap<String, String>();
 		for(int len=1;len<input.length();len++){
@@ -25,7 +25,8 @@ public class AllPossibleSubstringsOfString {
 				}
 			}
 		}
-		System.out.println("Total no. of substrings : "+hmap.size());
+		long count=hmap.size()+1; // added one for the original string (complete string)
+		System.out.println("Total no. of substrings : "+count);//hmap.size()+1);
 		// print all the substrings
 		System.out.println("All substrings: ");
 		for (Iterator<Entry<String, String>> it =hmap.entrySet().iterator(); it.hasNext();) {
