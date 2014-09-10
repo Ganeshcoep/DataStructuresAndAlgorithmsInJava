@@ -1,9 +1,9 @@
-package gss.algorithms.data_structures;
+package gss.standardDSHowTo;
 
 import java.util.Comparator;
 import java.util.PriorityQueue;
  
-public class PriorityQueueTest {
+public class PriorityQueueDemo {
  
 	static class PQsort implements Comparator<Integer> {
  

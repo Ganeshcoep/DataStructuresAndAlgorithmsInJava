@@ -3,18 +3,18 @@ package gss.algorithms.data_structures;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
-import java.math.*;
 
 public class Tree
 {
-    Tree()
-    {
+    Tree(){
 			root=new Node(1);
 			root.setLeft(null);
 			root.setRight(null);
+			headForLL=null;
 	}
      
 	public Node root;
+	public Node headForLL;
 	private int inOrderRank=0;
 
 	public static class Node{
@@ -410,10 +410,41 @@ public class Tree
 		return null;
 	}
 	
+	public Node makeLL(Node root){
+		if(root==null)
+			return null;
+		Node leftPtr=makeLL(root.left);
+		Node newNode=new Node(root.data);
+		Node rightPtr=makeLL(root.right);
+		
+		/*if(leftPtr!=null)
+			leftPtr.right=newNode;
+		if(rightPtr!=null)
+			rightPtr.left=newNode;
+		*/
+		newNode.setRight(rightPtr);
+		newNode.setLeft(leftPtr);
+		
+		//System.out.println(newNode.data);
+		if(headForLL==null)
+			headForLL=newNode;
+		/*if(rightPtr!=null)
+			return rightPtr;
+		else
+*/		return newNode;
+	}
 	
 	public static void main(String args[]){
 	
 	Tree t= new Tree();
+	t.addNodes(t.root);
+	Node n=t.makeLL(t.root);
+	
+	Node first=n;
+	while(first!=null){
+		System.out.println(first.data);
+		first=first.left;
+	}
 	
 	System.out.println("Searching for 5..."+ t.searchKeyInBST(t.root, 5));
 	

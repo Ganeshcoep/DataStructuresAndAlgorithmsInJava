@@ -1,4 +1,4 @@
-package gss.coding.problems;
+package javaConcepts;
 
 /*This question was asked in BOFA written test in the Output section */
 

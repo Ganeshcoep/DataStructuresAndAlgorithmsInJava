@@ -1,5 +1,7 @@
 package gss.coding.problems;
 
+//Ref: http://algorithmsandme.blogspot.com/2014/04/dynamic-programming-count-all-possible.html#.VAppWvldWYE
+
 public class AllPathsInMaze {
 
 	/**
@@ -48,10 +50,20 @@ public class AllPathsInMaze {
 		        }
 		        return Table[n-1];
 		}
+		
+	public	int PossiblePaths(int i,int j, int m, int n){
+			 
+	        if(i == m && j == n) return 1;
+	 
+	        return PossiblePaths(i+1,j, m,n) 
+	              + PossiblePaths(i, j+1, m,n) 
+	              + PossiblePaths(i+1, j+1,m,n);
+	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
 		AllPathsInMaze paths= new AllPathsInMaze();
+		//System.out.println(paths.PossiblePaths(0,0,4, 4)); //this will not work
 		System.out.println(paths.PossiblePaths_1(4, 4));
 		System.out.println(paths.PossiblePaths_2(4, 4));
 
