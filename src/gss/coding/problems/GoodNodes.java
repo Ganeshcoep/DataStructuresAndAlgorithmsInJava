@@ -70,9 +70,9 @@ public class GoodNodes {
 	int visited[]; // extra space 
 	
 	GoodNodes(){
-		//int m[]={1,2,3,4,5}; // ans is 3
+		int m[]={1,2,3,4,5}; // ans is 4
 		//int m[]={5,5,5,5,5}; //ans is 1
-		int m[]={1,3,4,5,1};  //ans is 0
+		//int m[]={1,3,4,5,1};  //ans is 0
 		//int m[]={1,3,4,5,2};  //ans is 1
 		a=m;
 		visited=new int[a.length];

@@ -26,10 +26,11 @@ public class goodNodesOld {
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//int m[]={1,2,3,4,5}; // ans is 3
-				int m[]={5,5,5,5,5}; //ans is 1
-				//int m[]={1,3,4,5,1};  //ans is 0
-				System.out.println(getNumberOfChanges(m));
+		int m[]={1,2,3,4,5}; // ans is 4
+		int m1[]={5,5,5,5,5}; //ans is 1
+		//int m[]={1,3,4,5,1};  //ans is 0
+		System.out.println(getNumberOfChanges(m));
+		System.out.println(getNumberOfChanges(m1));
 	}
 
 }
