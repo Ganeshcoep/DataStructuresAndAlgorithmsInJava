@@ -6,7 +6,7 @@ public class PermutationsAndCombinations {
 	 * @param args
 	 */
 	private int visit[];
-
+	
 	PermutationsAndCombinations(int n){
 		visit=new int[n];
 		for (int i = 0; i < visit.length; i++) {
