@@ -1,3 +1,8 @@
+/* This program is not giving proper results
+ * Refer GoodNodes.java for correct solution
+ * */
+
+
 package gss.coding.problems;
 
 import java.util.HashMap;
@@ -9,20 +14,16 @@ public class goodNodesOld {
 	 */
 	public static int getNumberOfChanges(int []a)
 	{
-		HashMap<Integer,Integer> map= new  HashMap<Integer,Integer>();
-		
-		int count =0;
-		
+		HashMap<Integer,Integer> map= new  HashMap<Integer,Integer>();		
+		//int count =0;		
 		for(int i=0;i<a.length;i++)
 		{
 			if(a[i]!=1 && !map.containsKey(a[i]))
 			{
 				map.put(a[i], a[i]);
 			}
-		}
-		
-		return map.size();
-		
+		}		
+		return map.size();		
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

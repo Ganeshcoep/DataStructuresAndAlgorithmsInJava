@@ -3,8 +3,7 @@ package gss.coding.problems;
 public class maxDiff {
 	
 	public static int maxDifference (int arr[])
-	{
-		
+	{		
 		// Check if array=null
 		if(arr==null)
 			return -1;
@@ -40,6 +39,31 @@ public class maxDiff {
 	    return maximim_sum;
 	}
 	
+	public static int maxDifference_1 (int arr[])
+	{	
+		// Check if array=null
+		if(arr==null)
+			return -1;
+		if(arr.length==0)
+			return -1;		
+	    // Initialize the value for difference = 2nd element - 1st element in the array 
+	    int difference = arr[1]-arr[0];	    
+	    int minElement=arr[0];
+	    int maximim_sum = difference;	 
+	    // Iterate over the array to find the maximum sum
+	    for(int i=1; i<arr.length-1; i++)
+	    {
+	        // Calculate value of difference
+	        difference = arr[i]-minElement;
+	        if(difference>maximim_sum)
+	        	maximim_sum=difference;
+	        if(arr[i]<minElement)
+	        	minElement=arr[i];
+	    }
+	    return maximim_sum;
+	}
+	 
+	
 	
 	public static void main(String[] args) {
 		int []arr= {7,9,6,5,4,3};
@@ -51,5 +75,11 @@ public class maxDiff {
 		System.out.println(maxDifference(arr2));		
 		System.out.println(maxDifference(arr3));
 		System.out.println(maxDifference(null));
+		
+		System.out.println(maxDifference_1(arr));
+		System.out.println(maxDifference_1(arr1));
+		System.out.println(maxDifference_1(arr2));		
+		System.out.println(maxDifference_1(arr3));
+		System.out.println(maxDifference_1(null));
 	}
 }
