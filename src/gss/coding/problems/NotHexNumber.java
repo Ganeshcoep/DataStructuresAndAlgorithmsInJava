@@ -1,10 +1,14 @@
 package gss.coding.problems;
 
-/* This is a custom exception clas created for 'SymbolLookup.java'
+/* This is a custom exception class created for 'SymbolLookup.java'
  * 
  */
 
 public class NotHexNumber extends Exception{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1055094617070332975L;
 	/**
 	 * @param args
 	 */

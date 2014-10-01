@@ -1,5 +1,9 @@
 package gss.coding.problems;
 
+/* Given array , find max difference between two integers ( a[i] and a[j])  such that i<j 
+ * 
+ */
+
 public class maxDiff {
 	
 	public static int maxDifference (int arr[])
