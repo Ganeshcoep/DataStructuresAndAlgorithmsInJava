@@ -1,6 +1,6 @@
 /* Author -Ganesh S Salvi
  * Date Created - 10/02/2014
- * Problem: print the matrix in diagonally (from right to left and from top to bottom)
+ * Problem: Print the matrix in diagonally (from right to left and from top to bottom)
  */
 
 package gss.coding.problems;
