@@ -12,7 +12,7 @@ public class StringPatternMatching {
         text = txt;
         pattern = ptr;
         F = new int[ptr.length()];
-        //pre-filled array F 
+        //pre-fill array F 
         LongestPrefixWithSuffix(pattern);
     }
 
