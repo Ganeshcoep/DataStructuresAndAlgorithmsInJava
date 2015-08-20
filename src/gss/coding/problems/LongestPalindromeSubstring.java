@@ -7,9 +7,11 @@ public class LongestPalindromeSubstring {
     
     public LongestPalindromeSubstring(String str) {
         this.str = str;
-        int len = str.length();
-        auxillaryArray = new int[len][len];
-        initializeauxillaryArray();
+        if(str != null){
+        	int len = str.length();
+        	auxillaryArray = new int[len][len];
+        	initializeauxillaryArray();
+        }
     }
     
     private void initializeauxillaryArray() {
@@ -19,6 +21,9 @@ public class LongestPalindromeSubstring {
     }
     
     public  int longestPalindromeLength(){
+    	
+    	if(str == null ) return -1; //if string in empty return -1
+    	
         char[] inputArr = str.toCharArray();  
         int maxPaliLen =0;
         for (int i = 0; i < inputArr.length; i++) {
