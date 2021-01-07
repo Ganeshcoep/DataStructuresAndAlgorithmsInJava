@@ -2,7 +2,7 @@ package leetcode;
 
 import leetcodeDataStructuresUtil.ListNode;
 
-public class Remove_Duplicates_from_Sorted_List_2_Prob82 {
+public class LC82_Remove_Duplicates_from_Sorted_List_2 {
 
 	public static void main(String[] args) {
 		
