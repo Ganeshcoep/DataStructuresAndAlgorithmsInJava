@@ -8,12 +8,11 @@ public class LC1506_FindRootOfN_AryTree {
 
 	}	
 	
-	// best is O(1) space and o(N) time considering the numbers are unique
+//		Best is O(1) space and o(N) time considering the numbers are unique
 //		so if we visit all nodes and their childern, we will visit every node twice but root ONCE
 //		so if we add val to sum_variable when we visit node and substact when we visit it through it parent
 //		ultimately the sum_variable will have a root node's value:
 //		
-//		Hints: root has a indegree of zero and others 1
 //		The trick is very nice for uniq nums coming twice in arr. Its like find a num that occurs only one and all other occur twice.
 				
 	// O(N) - space and time solution
@@ -54,6 +53,30 @@ public class LC1506_FindRootOfN_AryTree {
         for(Node nn: n.children){
             visit(nn, m);
         }
+    }
+
+//		Hints: root has a indegree of zero and others 1
+//    	approach 3
+    public Node findRoot(List<Node> tree) {
+        // set that contains all the child nodes.
+        HashSet<Integer> seen = new HashSet<Integer>();
+
+        // add all the child nodes into the set
+        for (Node node : tree) {
+            for (Node child : node.children)
+                // we could either add the value or the node itself.
+                seen.add(child.val);
+        }
+
+        Node root = null;
+        // find the node that is not in the child node set.
+        for (Node node : tree) {
+            if (!seen.contains(node.val)) {
+                root = node;
+                break;
+            }
+        }
+        return root;
     }
 
 }
